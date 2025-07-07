@@ -1,0 +1,37 @@
+.user-name-link {
+  color: var(--color-primary);
+  opacity: 0.9;
+  transition: all 0.2s linear;
+}
+
+.user-name-link + .user-name-link {
+  margin-top: 8px;
+}
+
+.user-name-link:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.delete-btn {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background-color: var(--color-lighterror);
+  color: var(--color-error);
+}
+
+/* dark theme */
+.user-name-link.dark-theme {
+  color: var(--color-dark-link);
+}
+
+.user-name-link.dark-theme:hover {
+  color: var(--color-info);
+}

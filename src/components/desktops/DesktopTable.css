@@ -1,0 +1,37 @@
+.desktop-name-link {
+  color: var(--color-primary);
+  opacity: 0.9;
+  transition: all 0.2s linear;
+}
+
+.desktop-name-link:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.noVNC-btn {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noVNC-btn:hover {
+  background-color: var(--color-lightprimary);
+  color: var(--color-primary);
+}
+
+/* dark theme */
+.desktop-name-link.dark-theme {
+  color: var(--color-dark-link);
+}
+
+.desktop-name-link.dark-theme:hover {
+  color: var(--color-info);
+}
+
+.text-light-dark-theme-custom {
+  color: var(--color-lightgray);
+}

@@ -1,0 +1,42 @@
+.icon-switch-dark-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  font-size: 24px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 12px #ffd700) drop-shadow(0 0 17px #ffd700);
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-switch-dark-theme:hover {
+  filter: drop-shadow(0 0 15px #ffd700) drop-shadow(0 0 20px #ffd700);
+}
+
+.header_custom-dark-theme {
+  background-color: var(--color-darkgray);
+}
+
+.link-my-profile-dark-theme {
+  color: #fff;
+}
+
+.avata-icon {
+  height: 28px;
+  width: 28px;
+  padding: 4px;
+  border-radius: 50%;
+  color: #fff;
+  background: #1c169c;
+  background: linear-gradient(
+    139deg,
+    rgba(28, 22, 156, 1) 0%,
+    rgba(68, 68, 201, 1) 35%,
+    rgba(77, 225, 255, 1) 100%
+  );
+}
+
+.avata-icon.dark-theme {
+  background: #eeaeca;
+  background: linear-gradient(120deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}

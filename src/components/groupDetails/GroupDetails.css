@@ -1,0 +1,143 @@
+.add-group-form-desc-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.add-group-form-desc-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.add-group-form-desc {
+  width: 100%;
+  color: #111827;
+  background-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 9px;
+  border-color: var(--color-border);
+  box-shadow: none !important;
+}
+
+/* icon back */
+.details-back-icon {
+  padding: 4px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  transition: all linear 0.1s;
+}
+
+.details-back-icon:hover {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* desc */
+.group-details-desc {
+  color: var(--color-darkborder);
+  padding: 0 16px;
+}
+
+/* permission */
+.group-details-permissions {
+  margin-bottom: 40px;
+}
+
+.group-details-permissions-heading {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.group-details-permissions-list {
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.group-details-permissions-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.group-details-permissions-item-name {
+  color: var(--color-dark);
+}
+
+.group-details-permissions-item-name:hover {
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+/* tooltip */
+.tooltip-permission-desc {
+  border-radius: 9px !important;
+  background-color: var(--color-darkgray) !important;
+  color: #fff !important;
+}
+
+/* separate */
+.group-details-permissions-separate {
+  width: 100%;
+  position: relative;
+}
+
+.group-details-permissions-separate::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30%;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+/* dark theme */
+.details-back-icon.dark-theme {
+  border-color: var(--color-darkborder);
+}
+
+.details-back-icon.dark-theme:hover {
+  border-color: var(--color-primary);
+}
+
+.add-group-form-desc-label.dark-theme {
+  color: #fff;
+}
+
+.group-details-desc.dark-theme {
+  color: var(--color-bodytext);
+}
+
+.add-group-form-desc.dark-theme {
+  border-color: var(--color-darkborder);
+  color: #fff;
+}
+
+.group-details-permissions-item-name.dark-theme {
+  color: var(--color-bodytext);
+}
+
+.group-details-permissions-item-name.dark-theme:hover {
+  color: #fff;
+}
+
+.tooltip-permission-desc.dark-theme {
+  background-color: var(--color-darkborder) !important;
+}
+
+.group-details-permissions-separate.dark-theme::after {
+  border-color: var(--color-darkborder);
+}

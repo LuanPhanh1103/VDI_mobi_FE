@@ -1,0 +1,38 @@
+.add-group-form-desc-wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.add-group-form-desc-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.add-group-form-desc {
+  width: 100%;
+  color: #111827;
+  background-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 9px;
+  border-color: var(--color-border);
+  box-shadow: none !important;
+}
+
+/* dark theme */
+.add-group-form-desc-label.dark-theme {
+  color: #fff;
+}
+
+.add-group-form-desc.dark-theme {
+  border-color: var(--color-darkborder);
+  color: #fff;
+}
+
+.add-group-form-desc.dark-theme:focus {
+  border-color: var(--color-primary);
+}

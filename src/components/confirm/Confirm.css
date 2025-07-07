@@ -1,0 +1,67 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOn 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.popup {
+  background-color: #fff;
+  max-width: 420px;
+  min-width: 360px;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.close-btn {
+  margin-left: auto;
+  color: var(--color-bodytext);
+}
+
+.close-btn:hover {
+  color: var(--color-error);
+  cursor: pointer;
+}
+
+.popup-mess {
+  color: var(--color-darkgray);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.popup-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm-btn {
+}
+
+.cancel-btn {
+}
+
+@keyframes fadeOn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* dark theme */
+.popup.dark-theme {
+  background-color: var(--color-dark);
+}
+
+.popup-mess.dark-theme {
+  color: var(--color-bordergray);
+}

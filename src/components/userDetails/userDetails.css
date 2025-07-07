@@ -1,0 +1,108 @@
+.block-password-input {
+  position: relative;
+}
+
+.edit-password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  transition: all 0.2s linear;
+  padding: 0 4px;
+}
+
+.edit-password-icon:hover {
+  color: #6b6c6e;
+  cursor: pointer;
+}
+
+.check-desc {
+  font-size: 0.8rem;
+}
+
+.checkbox-hiden {
+  display: none;
+}
+
+.check-icon--enable {
+  color: #36c96c;
+}
+
+.check-icon--disable {
+  color: #d2d5db;
+}
+
+.check-icon--enable,
+.check-icon--disable {
+  opacity: 0.9;
+  transition: all 0.2s linear;
+}
+
+.check-icon--enable:hover,
+.check-icon--disable:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.custom-input-age {
+  color: #11182799;
+}
+
+.custom-input-age:focus {
+  border-color: var(--color-border) !important;
+}
+
+/* icon back */
+.details-back-icon {
+  padding: 4px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  transition: all linear 0.1s;
+}
+
+.details-back-icon:hover {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* change password */
+.close-change-password-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--color-bodytext);
+}
+
+.close-change-password-icon:hover {
+  cursor: pointer;
+  color: var(--color-error);
+}
+
+.show-old-password-icon {
+  position: absolute;
+  right: 38px;
+  top: 126px;
+  transform: translateY(-50%);
+  z-index: 9;
+  cursor: pointer;
+}
+
+.show-old-password-icon:hover {
+  color: var(--color-dark);
+}
+
+.show-old-password-icon.dark-theme:hover {
+  color: var(--color-white);
+}
+
+/* dark theme */
+.details-back-icon.dark-theme {
+  border-color: var(--color-darkborder);
+}
+
+.details-back-icon.dark-theme:hover {
+  border-color: var(--color-primary);
+}

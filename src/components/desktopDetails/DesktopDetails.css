@@ -1,0 +1,36 @@
+/* icon back */
+.details-back-icon {
+  padding: 4px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 9px;
+  transition: all linear 0.1s;
+}
+
+.details-back-icon:hover {
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* change password */
+.close-change-password-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--color-bodytext);
+}
+
+.close-change-password-icon:hover {
+  cursor: pointer;
+  color: var(--color-error);
+}
+
+/* dark theme */
+.details-back-icon.dark-theme {
+  border-color: var(--color-darkborder);
+}
+
+.details-back-icon.dark-theme:hover {
+  border-color: var(--color-primary);
+}

@@ -1,0 +1,20 @@
+.input-password-group {
+  position: relative;
+}
+
+.show-password-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.show-password-icon.text-dark:hover {
+  color: var(--color-dark);
+}
+
+/* dark theme */
+.show-password-icon.text-white:hover {
+  color: var(--color-lightgray);
+}

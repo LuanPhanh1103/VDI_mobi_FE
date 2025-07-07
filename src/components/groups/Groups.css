@@ -1,0 +1,42 @@
+.group-name-link {
+  color: var(--color-primary);
+  opacity: 0.9;
+  transition: all 0.2s linear;
+}
+
+.group-name-link:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.edit-btn {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background-color: var(--color-lighterror);
+  color: var(--color-error);
+}
+
+/* dark theme */
+.group-name-link.dark-theme {
+  color: var(--color-dark-link);
+}
+
+.group-name-link.dark-theme:hover {
+  color: var(--color-info);
+}
