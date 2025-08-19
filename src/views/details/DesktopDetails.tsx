@@ -1,10 +1,10 @@
-import DesktopDetails from 'src/components/desktopDetails/DesktopDetails';
+import DesktopDetails from 'src/components/DesktopDetails/DesktopDetails';
 import { useEffect, useMemo, useState } from 'react';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 import { Desktop } from '../../types/user/User';
 import { useParams } from 'react-router-dom';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from '../spinner/Spinner';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 import Error from '../auth/error/Error';
 
 export interface DesktopDetailsType {

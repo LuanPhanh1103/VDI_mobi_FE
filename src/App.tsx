@@ -1,9 +1,9 @@
 import { RouterProvider } from 'react-router';
 import { Flowbite, ThemeModeScript } from 'flowbite-react';
-import customTheme from './utils/theme/custom-theme';
+import customTheme from './lib/utils/theme/custom-theme';
 import router from './routes/Router';
 import { Toaster } from 'react-hot-toast';
-import { useUser } from './hooks/UserContext';
+import { useUser } from './hooks/useUser';
 
 function App() {
   const { theme } = useUser();

@@ -1,14 +1,12 @@
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import axiosClient from 'src/api/axiosClient';
-import { useUser } from 'src/hooks/UserContext';
-import useAuthGuard from 'src/hooks/useAuthGuard';
+import { useAuth } from 'src/hooks/useAuth';
+import withAuth from 'src/components/Hoc/withAuth';
 import { toast } from 'react-hot-toast';
 
 import './authfroms.css';
-import { useLocation } from 'react-router';
 
 const AuthLogin = () => {
   const location = useLocation();
@@ -20,35 +18,18 @@ const AuthLogin = () => {
     }
   }, [location.state]);
 
-  useAuthGuard();
-  const { setToken, setUsername, setTheme, setUserId } = useUser();
+
+  const { login, loading } = useAuth();
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [isShowPassword, setIsShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const expiresAt = Date.now() + 60 * 60 * 1000; //1 giờ
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
-      // 1. Gọi API login
-      const response = await axiosClient.post('/auth/login', {
-        username: userName,
-        password: password,
-      });
-
-      const { token, username, userId } = response.data.result;
-      localStorage.setItem('token', token);
-      localStorage.setItem('userId', userId);
-      localStorage.setItem('username', username);
-      localStorage.setItem('expiresAt', expiresAt.toString());
-      setToken(token);
-      setUserId(userId);
-      setUsername(username);
-      const theme = localStorage.getItem('flowbite-theme-mode') || 'light';
-      setTheme(theme);
+      await login(userName, password);
 
       navigate('/', { state: { loginSuccess: true } });
     } catch (error) {
@@ -98,8 +79,8 @@ const AuthLogin = () => {
                   ? 'text-white show-password-icon'
                   : 'show-password-icon'
                 : isShowPassword
-                ? 'text-dark show-password-icon'
-                : 'show-password-icon'
+                  ? 'text-dark show-password-icon'
+                  : 'show-password-icon'
             }
             onClick={() => setIsShowPassword((prev) => !prev)}
           />
@@ -116,11 +97,16 @@ const AuthLogin = () => {
           Forgot Password ?
         </Link>
       </div>
-      <Button type="submit" color={'primary'} className="w-full bg-primary text-white rounded-xl">
-        Sign in
+      <Button
+        type="submit"
+        color={'primary'}
+        className="w-full bg-primary text-white rounded-xl"
+        disabled={loading}
+      >
+        {loading ? 'Signing in...' : 'Sign in'}
       </Button>
     </form>
   );
 };
 
-export default AuthLogin;
+export default withAuth(AuthLogin, { requireAuth: false });

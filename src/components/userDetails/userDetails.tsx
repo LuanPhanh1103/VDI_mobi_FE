@@ -4,12 +4,12 @@ import { Icon } from '@iconify/react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { User, Role } from 'src/types/user/User';
 import { ProfilePropType } from 'src/views/details/UserDetail';
-import { useUser } from 'src/hooks/UserContext';
-import InputText from '../input/InputText';
-import InputPassword from '../input/InputPassword';
-import InpuSelect, { OptionValue } from '../input/InputSelect';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
+import { useUser } from 'src/hooks/useUser';
+import InputText from '../Input/InputText';
+import InputPassword from '../Input/InputPassword';
+import InpuSelect, { OptionValue } from '../Input/InputSelect';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 import toast from 'react-hot-toast';
 import useGoBack from 'src/hooks/useGoBack';
 
@@ -130,7 +130,7 @@ const UserDetails = (user: ProfilePropType) => {
         },
       });
       console.log('update info user ' + currentUser.username + ' successful');
-      navigate('/ui/users', { state: { updateInfoUsersuccess: true } });
+      navigate('/users', { state: { updateInfoUsersuccess: true } });
     } catch (error) {
       console.log(error);
       toast.error(`Error: ${error}`);
@@ -171,7 +171,7 @@ const UserDetails = (user: ProfilePropType) => {
         },
       });
       console.log('update password user ' + currentUser.username + ' successful');
-      navigate('/ui/users', { state: { updatePasswordUsersuccess: true } });
+      navigate('/users', { state: { updatePasswordUsersuccess: true } });
     } catch (error) {
       console.log(error);
       toast.error(`Error: ${error}`);

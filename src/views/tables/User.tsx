@@ -1,4 +1,4 @@
-import { UsersTable } from 'src/components/users/UsersTable';
+import { UsersTable } from 'src/components/Users/UsersTable';
 
 const Table = () => {
   return (

@@ -1,4 +1,4 @@
-import MyDesktopTable from 'src/components/desktops/MyDesktopTable';
+import MyDesktopTable from 'src/components/Desktops/MyDesktopTable';
 
 const MyDesktop = () => {
   return (

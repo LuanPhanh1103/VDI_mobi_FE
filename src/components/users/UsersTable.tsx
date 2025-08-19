@@ -4,11 +4,11 @@ import { Icon } from '@iconify/react';
 import { Table } from 'flowbite-react';
 import Search from '../Search/Search';
 import { Link } from 'react-router';
-import Confirm from '../confirm/Confirm';
+import Confirm from '../Confirm/Confirm';
 import { User } from 'src/types/user/User';
-import { useUser } from 'src/hooks/UserContext';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
+import { useUser } from 'src/hooks/useUser';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 
 import './UsersTable.css';
 import toast from 'react-hot-toast';
@@ -137,7 +137,7 @@ const UsersTable = () => {
           <Table.Row key={user.id}>
             <Table.Cell className="whitespace-nowrap ps-6">
               <h6 className={`text-sm user-name-link ${theme === 'dark' ? 'dark-theme' : ''}`}>
-                <Link to={`/ui/users/${user.username}`}>{user.username}</Link>
+                <Link to={`/users/${user.username}`}>{user.username}</Link>
               </h6>
             </Table.Cell>
             <Table.Cell>
@@ -173,7 +173,7 @@ const UsersTable = () => {
                   style={!canGetAllRoles ? noPermissionStyle : undefined}
                 >
                   {canGetAllRoles ? (
-                    <Link to={`/ui/groups/${group.name}`}>{group.name}</Link>
+                    <Link to={`/groups/${group.name}`}>{group.name}</Link>
                   ) : (
                     <p>{group.name}</p>
                   )}
@@ -189,7 +189,7 @@ const UsersTable = () => {
                     style={!canGetAllVDI ? noPermissionStyle : undefined}
                   >
                     {canGetAllVDI ? (
-                      <Link to={`/ui/desktops/${desktop.name}`}>{desktop.name}</Link>
+                      <Link to={`/desktops/${desktop.name}`}>{desktop.name}</Link>
                     ) : (
                       <p>{desktop.name}</p>
                     )}
@@ -253,7 +253,7 @@ const UsersTable = () => {
               as={Link}
               color={'primary'}
               style={{ marginLeft: 'auto', marginTop: '14px', maxWidth: 'fit-content' }}
-              to={'/ui/users/addUser'}
+              to={'/users/addUser'}
             >
               Add User
               <Icon icon="solar:add-circle-bold" height={22} />

@@ -1,6 +1,6 @@
-import { default as CustomAddUserForm } from 'src/components/addForm/addUserForm';
+import { default as CustomAddUserForm } from 'src/components/AddForm/AddUserForm';
 import { Navigate } from 'react-router';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 const AddUserForm = () => {
   const { hasPermission } = useUser();

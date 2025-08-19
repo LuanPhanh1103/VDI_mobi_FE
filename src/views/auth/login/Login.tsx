@@ -1,4 +1,4 @@
-import FullLogo from 'src/layouts/full/shared/logo/FullLogo';
+import FullLogo from 'src/components/Layouts/full/shared/logo/FullLogo';
 import Mbflogo from 'src/assets/images/logos/MobiFone_logo.png';
 import AuthLogin from '../authforms/AuthLogin';
 

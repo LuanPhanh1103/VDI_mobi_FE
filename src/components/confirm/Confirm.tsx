@@ -1,7 +1,7 @@
 import { Button } from 'flowbite-react';
 import './Confirm.css';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 import Logo from '/src/assets/images/logos/logo.png';
 import LogoDark from '/src/assets/images/logos/logo-dark.png';
 

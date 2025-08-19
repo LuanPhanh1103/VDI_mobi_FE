@@ -1,13 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { lazy } from 'react';
-import { Navigate, createBrowserRouter } from 'react-router';
-import Loadable from 'src/layouts/full/shared/loadable/Loadable';
+import { createBrowserRouter, Navigate } from 'react-router';
+import Loadable from 'src/components/Layouts/full/shared/loadable/Loadable';
 
 /* ***Layouts**** */
-const FullLayoutWrapper = Loadable(lazy(() => import('../layouts/full/FullLayoutWrapper')));
-const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
-const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')));
+const FullLayoutWrapper = Loadable(lazy(() => import('../components/Layouts/full/FullLayoutWrapper')));
+const FullLayout = Loadable(lazy(() => import('../components/Layouts/full/FullLayout')));
 
 // Home
 const HomePage = Loadable(lazy(() => import('../views/home/Home')));
@@ -53,23 +52,23 @@ const Router = [
         children: [
           { path: '/', exact: true, element: <HomePage /> },
 
-          { path: '/ui/:username/profile', exact: true, element: <Profile /> },
+          { path: '/:username/profile', exact: true, element: <Profile /> },
 
-          { path: '/ui/dashboard', exact: true, element: <Dashboard /> },
+          { path: '/dashboard', exact: true, element: <Dashboard /> },
 
-          { path: '/ui/desktops', exact: true, element: <Desktops /> },
-          { path: '/ui/myDesktops', exact: true, element: <MyDesktops /> },
-          { path: '/ui/desktops/:desktopName', exact: true, element: <DesktopDetails /> },
-          { path: '/ui/myDesktops/:desktopName', exact: true, element: <DesktopDetails /> },
-          { path: '/ui/desktops/addDesktop', exact: true, element: <AddDesktopForm /> },
+          { path: '/desktops', exact: true, element: <Desktops /> },
+          { path: '/myDesktops', exact: true, element: <MyDesktops /> },
+          { path: '/desktops/:desktopName', exact: true, element: <DesktopDetails /> },
+          { path: '/myDesktops/:desktopName', exact: true, element: <DesktopDetails /> },
+          { path: '/desktops/addDesktop', exact: true, element: <AddDesktopForm /> },
 
-          { path: '/ui/users', exact: true, element: <Users /> },
-          { path: '/ui/users/:username', exact: true, element: <UserDetails /> },
-          { path: '/ui/users/addUser', exact: true, element: <AddUserForm /> },
+          { path: '/users', exact: true, element: <Users /> },
+          { path: '/users/:username', exact: true, element: <UserDetails /> },
+          { path: '/users/addUser', exact: true, element: <AddUserForm /> },
 
-          { path: '/ui/groups', exact: true, element: <Groups /> },
-          { path: '/ui/groups/:groupName', exact: true, element: <GroupDetails /> },
-          { path: '/ui/groups/addGroup', exact: true, element: <AddGroupForm /> },
+          { path: '/groups', exact: true, element: <Groups /> },
+          { path: '/groups/:groupName', exact: true, element: <GroupDetails /> },
+          { path: '/groups/addGroup', exact: true, element: <AddGroupForm /> },
 
           { path: '/icons/solar', exact: true, element: <Solar /> },
           { path: '*', element: <Navigate to="/auth/404" /> },
@@ -79,7 +78,6 @@ const Router = [
   },
   {
     path: '/',
-    element: <BlankLayout />,
     children: [
       { path: '/auth/login', element: <Login /> },
       { path: '/auth/register', element: <Register /> },

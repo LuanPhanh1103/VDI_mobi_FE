@@ -3,12 +3,12 @@ import { Label, TextInput, Button, Badge } from 'flowbite-react';
 import { Icon } from '@iconify/react';
 import { useParams } from 'react-router-dom';
 import { User, Role } from 'src/types/user/User';
-import { useUser } from 'src/hooks/UserContext';
-import InputText from '../input/InputText';
-import InputPassword from '../input/InputPassword';
-import InpuSelect, { OptionValue } from '../input/InputSelect';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
+import { useUser } from 'src/hooks/useUser';
+import InputText from '../Input/InputText';
+import InputPassword from '../Input/InputPassword';
+import InpuSelect, { OptionValue } from '../Input/InputSelect';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 import toast from 'react-hot-toast';
 import useGoBack from 'src/hooks/useGoBack';
 

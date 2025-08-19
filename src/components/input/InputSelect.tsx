@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import React, { useState, useEffect, useRef } from 'react';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 // Định nghĩa kiểu dữ liệu cho option
 export type OptionValue = string | number;

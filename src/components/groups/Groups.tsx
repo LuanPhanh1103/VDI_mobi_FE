@@ -4,13 +4,13 @@ import { Link } from 'react-router';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Role } from 'src/types/user/User';
-import { useUser } from 'src/hooks/UserContext';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
+import { useUser } from 'src/hooks/useUser';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 import { toast } from 'react-hot-toast';
 
 import './Groups.css';
-import Confirm from '../confirm/Confirm';
+import Confirm from '../Confirm/Confirm';
 import { useLocation, useNavigate } from 'react-router';
 
 const GroupsTable = () => {
@@ -143,7 +143,7 @@ const GroupsTable = () => {
               as={Link}
               color={'primary'}
               style={{ marginLeft: 'auto', marginTop: '14px', maxWidth: 'fit-content' }}
-              to={'/ui/groups/addGroup'}
+              to={'/groups/addGroup'}
             >
               Add Group
               <Icon icon="solar:add-circle-bold" height={22} />
@@ -172,7 +172,7 @@ const GroupsTable = () => {
                             theme === 'dark' ? 'dark-theme' : ''
                           }`}
                         >
-                          <Link to={`/ui/groups/${item.name}`}>{item.name}</Link>
+                          <Link to={`/groups/${item.name}`}>{item.name}</Link>
                         </h6>
                       </Table.Cell>
                       <Table.Cell>

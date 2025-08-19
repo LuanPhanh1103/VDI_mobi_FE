@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Button } from 'flowbite-react';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 import { useNavigate } from 'react-router';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 import { Role } from 'src/types/user/User';
 import { toast } from 'react-hot-toast';
 
-import InputText from '../input/InputText';
+import InputText from '../Input/InputText';
 
-import './addGroupForm.css';
+import './AddGroupForm.css';
 
 const addGroupForm = () => {
   const { token, theme, hasPermission } = useUser();
@@ -52,7 +52,7 @@ const addGroupForm = () => {
     setGroupName('');
     setGroupDesc('');
 
-    navigate('/ui/groups');
+    navigate('/groups');
   }, [navigate]);
 
   const handleAddGroup = useCallback(async () => {
@@ -81,7 +81,7 @@ const addGroupForm = () => {
         },
       );
       console.log('add group ' + groupName + ' successful');
-      navigate('/ui/groups', { state: { addGroupSuccess: true } });
+      navigate('/groups', { state: { addGroupSuccess: true } });
     } catch (error) {
       console.log(error);
       toast.error(`Error: ${error}`);

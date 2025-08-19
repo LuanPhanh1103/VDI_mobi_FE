@@ -1,7 +1,7 @@
 import HomeImgLight from '../../assets/images/backgrounds/LIGHT.png';
 import HomeImgDark from '../../assets/images/backgrounds/Presentation1.png';
 import MbfLogo from '../../assets/images/logos/MobiFone_logo.png';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 import './Home.css';
 

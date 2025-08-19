@@ -1,4 +1,4 @@
-import GroupDetails from 'src/components/groupDetails/GroupDetails';
+import GroupDetails from 'src/components/GroupDetails/GroupDetails';
 
 const GrpDetails = () => {
   return (

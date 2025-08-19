@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Badge, Button } from 'flowbite-react';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 import { useNavigate, useParams } from 'react-router';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 import { Role, Permission } from 'src/types/user/User';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
@@ -136,7 +136,7 @@ const GroupDetails = () => {
       );
 
       console.log('update group ' + groupName + ' successful');
-      navigate('/ui/groups', { state: { updateGroupSuccess: true } });
+      navigate('/groups', { state: { updateGroupSuccess: true } });
     } catch (error) {
       console.log(error);
       toast.error(`Error: ${error}`);

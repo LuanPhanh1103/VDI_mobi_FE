@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput, Button } from 'flowbite-react';
 import { Icon } from '@iconify/react';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 import './Search.css';
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 import './input.css';
 

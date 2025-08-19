@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Label, TextInput, Button, Badge } from 'flowbite-react';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
-import { useUser } from 'src/hooks/UserContext';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
+import { useUser } from 'src/hooks/useUser';
 import { useNavigate } from 'react-router';
 import { User } from 'src/types/user/User';
 import { toast } from 'react-hot-toast';
 
-import InputText from '../input/InputText';
-import InputPassword from '../input/InputPassword';
+import InputText from '../Input/InputText';
+import InputPassword from '../Input/InputPassword';
 
-import './addUserForm.css';
+import './AddUserForm.css';
 
 const AddUserForm = () => {
   const { token } = useUser();
@@ -66,7 +66,7 @@ const AddUserForm = () => {
   const navigate = useNavigate();
 
   const handleCancle = useCallback(() => {
-    navigate('/ui/users');
+    navigate('/users');
   }, [navigate]);
 
   const handleAddUser = useCallback(async () => {
@@ -97,7 +97,7 @@ const AddUserForm = () => {
         },
       );
       console.log('add user successful');
-      navigate('/ui/users', { state: { addUserSuccess: true } });
+      navigate('/users', { state: { addUserSuccess: true } });
     } catch (error) {
       console.log(error);
       toast.error(`Error: ${error}`);
@@ -121,12 +121,14 @@ const AddUserForm = () => {
         Newly created users will be in the{' '}
         <strong style={{ color: 'var(--color-primary)' }}>USER</strong> group by default
       </p>
-      <div className="mt-6">
-        {loading ? (
-          <Spinner />
-        ) : (
-          <div className="grid grid-cols-12 gap-30">
-            <div className="lg:col-span-6 col-span-12">
+      <div className="mt-6 relative">
+        {loading && (
+          <div className="absolute inset-0 bg-white/50 dark:bg-darkgray/50 flex items-center justify-center z-10 rounded-lg">
+            <Spinner />
+          </div>
+        )}
+        <div className={`grid grid-cols-12 gap-30 ${loading ? 'pointer-events-none opacity-60' : ''}`}>
+          <div className="lg:col-span-6 col-span-12">
               <div className="flex  flex-col">
                 <InputText
                   type="text"
@@ -186,8 +188,8 @@ const AddUserForm = () => {
                   </Badge>
                 </div>
               </div>
-            </div>
-            <div className="lg:col-span-6 col-span-12">
+          </div>
+          <div className="lg:col-span-6 col-span-12">
               <div className="flex flex-col">
                 <InputText
                   type="email"
@@ -250,17 +252,16 @@ const AddUserForm = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div className="col-span-12 flex gap-3">
+          </div>
+          <div className="col-span-12 flex gap-3">
               <Button color={'primary'} onClick={handleAddUser} disabled={!isFormValid}>
                 Add
               </Button>
               <Button color={'error'} onClick={handleCancle}>
                 Cancel
               </Button>
-            </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import { default as CustomAddGroupForm } from 'src/components/addForm/addGroupForm';
+import { default as CustomAddGroupForm } from 'src/components/AddForm/AddGroupForm';
 import { Navigate } from 'react-router';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 const AddGroupForm = () => {
   const { hasPermission } = useUser();

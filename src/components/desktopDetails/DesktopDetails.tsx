@@ -3,14 +3,14 @@ import { Label, Button, Badge, Dropdown } from 'flowbite-react';
 import { Icon } from '@iconify/react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { User, Desktop } from 'src/types/user/User';
-import axiosClient from 'src/api/axiosClient';
-import InputText from '../input/InputText';
-import InpuSelect, { OptionObject, OptionValue } from '../input/InputSelect';
-import InputPassword from '../input/InputPassword';
+import axiosClient from 'src/lib/api/axiosClient';
+import InputText from '../Input/InputText';
+import InpuSelect, { OptionObject, OptionValue } from '../Input/InputSelect';
+import InputPassword from '../Input/InputPassword';
 import { DesktopDetailsType } from 'src/views/details/DesktopDetails';
 import toast from 'react-hot-toast';
-import Spinner from 'src/views/spinner/Spinner';
-import { useUser } from 'src/hooks/UserContext';
+import Spinner from 'src/components/Spinner/Spinner';
+import { useUser } from 'src/hooks/useUser';
 import useGoBack from 'src/hooks/useGoBack';
 
 import './DesktopDetails.css';
@@ -269,7 +269,7 @@ const DesktopDetails = ({ desktop, ipList, desNameList }: DesktopDetailsType) =>
         },
       });
       console.log('update desktop ' + currenDesktop.name + ' successful');
-      navigate('/ui/desktops', { state: { updateDesktopSuccess: true } });
+      navigate('/desktops', { state: { updateDesktopSuccess: true } });
     } catch (error) {
       console.log(error);
       toast.error(`Error: ${error}`);

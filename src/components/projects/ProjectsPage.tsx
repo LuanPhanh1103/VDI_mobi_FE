@@ -1,11 +1,11 @@
 // FE ProjectsPage.tsx - Danh sách Project dạng bảng + chức năng tạo/xoá
 import { useEffect, useState } from 'react';
 import { Button, Modal, Table } from 'flowbite-react';
-import { Icon } from '@iconify/react';
-import axiosClient from 'src/api/axiosClient';
+// import { Icon } from '@iconify/react';
+import axiosClient from 'src/lib/api/axiosClient';
 import toast from 'react-hot-toast';
-import InputText from '../input/InputText';
-import { useUser } from 'src/hooks/UserContext';
+import InputText from '../Input/InputText';
+import { useUser } from 'src/hooks/useUser';
 
 interface Project {
   id: string;
@@ -39,7 +39,7 @@ const ProjectsPage = () => {
 
   const handleCreate = async () => {
     try {
-      const res = await axiosClient.post(
+      await axiosClient.post(
         '/projects',
         { name, description, ownerId: userDetails?.id },
         { headers: { Authorization: `Bearer ${token}` } },
@@ -86,19 +86,27 @@ const ProjectsPage = () => {
           <Table.HeadCell></Table.HeadCell>
         </Table.Head>
         <Table.Body>
-          {projects.map((p) => (
-            <Table.Row key={p.id} className="bg-white dark:bg-gray-800">
-              <Table.Cell>{p.name}</Table.Cell>
-              <Table.Cell>{p.description}</Table.Cell>
-              <Table.Cell>{p.ownerId}</Table.Cell>
-              <Table.Cell>{p.memberIds.length}</Table.Cell>
-              <Table.Cell>
-                <Button size="xs" color="failure" onClick={() => handleDelete(p.id)}>
-                  Xoá
-                </Button>
+          {loading ? (
+            <Table.Row>
+              <Table.Cell colSpan={5} className="text-center">
+                Đang tải...
               </Table.Cell>
             </Table.Row>
-          ))}
+          ) : (
+            projects.map((p) => (
+              <Table.Row key={p.id} className="bg-white dark:bg-gray-800">
+                <Table.Cell>{p.name}</Table.Cell>
+                <Table.Cell>{p.description}</Table.Cell>
+                <Table.Cell>{p.ownerId}</Table.Cell>
+                <Table.Cell>{p.memberIds.length}</Table.Cell>
+                <Table.Cell>
+                  <Button size="xs" color="failure" onClick={() => handleDelete(p.id)}>
+                    Xoá
+                  </Button>
+                </Table.Cell>
+              </Table.Row>
+            ))
+          )}
         </Table.Body>
       </Table>
 

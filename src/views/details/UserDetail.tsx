@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { default as UsDetails } from 'src/components/userDetails/userDetails';
-import { useUser } from 'src/hooks/UserContext';
+import { default as UsDetails } from 'src/components/UserDetails/userDetails';
+import { useUser } from 'src/hooks/useUser';
 import { User } from '../../types/user/User';
 import { useParams } from 'react-router-dom';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from '../spinner/Spinner';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 
 export interface ProfilePropType {
   user: User;

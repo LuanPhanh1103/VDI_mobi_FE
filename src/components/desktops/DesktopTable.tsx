@@ -4,11 +4,11 @@ import { Icon } from '@iconify/react';
 import { Table } from 'flowbite-react';
 import Search from '../Search/Search';
 import { Link } from 'react-router';
-import Confirm from '../confirm/Confirm';
+import Confirm from '../Confirm/Confirm';
 import { User, Desktop } from 'src/types/user/User';
-import { useUser } from 'src/hooks/UserContext';
-import axiosClient from 'src/api/axiosClient';
-import Spinner from 'src/views/spinner/Spinner';
+import { useUser } from 'src/hooks/useUser';
+import axiosClient from 'src/lib/api/axiosClient';
+import Spinner from 'src/components/Spinner/Spinner';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import toast from 'react-hot-toast';
 
@@ -359,7 +359,7 @@ const DesktopTable = () => {
             as={Link}
             color={'primary'}
             style={{ marginLeft: 'auto', marginTop: '14px', maxWidth: 'fit-content' }}
-            to={'/ui/desktops/addDesktop'}
+            to={'/desktops/addDesktop'}
           >
             Add Desktop
             <Icon icon="solar:add-circle-bold" height={22} />
@@ -399,7 +399,7 @@ const DesktopTable = () => {
                         style={permissions.canViewInfoVDI ? {} : { cursor: 'initial' }}
                       >
                         {permissions.canViewInfoVDI ? (
-                          <Link to={`/ui/desktops/${item.name}`}>{item.name}</Link>
+                          <Link to={`/desktops/${item.name}`}>{item.name}</Link>
                         ) : (
                           item.name
                         )}
@@ -476,7 +476,7 @@ const DesktopTable = () => {
                         style={!permissions.canGetAllUser ? { cursor: 'initial' } : {}}
                       >
                         {permissions.canGetAllUser ? (
-                          <Link to={user?.username ? `/ui/users/${user.username}` : '#'}>
+                          <Link to={user?.username ? `/users/${user.username}` : '#'}>
                             {user?.username || '----'}
                           </Link>
                         ) : (

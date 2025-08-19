@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 import './input.css';
 

@@ -1,4 +1,4 @@
-import GroupsTable from 'src/components/groups/Groups';
+import GroupsTable from 'src/components/Groups/Groups';
 
 const Groups = () => {
   return (

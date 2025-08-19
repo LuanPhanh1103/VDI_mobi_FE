@@ -1,6 +1,6 @@
-import { default as CustomAddDesktopForm } from 'src/components/addForm/addDesktopForm';
+import { default as CustomAddDesktopForm } from 'src/components/AddForm/AddDesktopForm';
 import { Navigate } from 'react-router';
-import { useUser } from 'src/hooks/UserContext';
+import { useUser } from 'src/hooks/useUser';
 
 const AddDesktopForm = () => {
   const { hasPermission } = useUser();
