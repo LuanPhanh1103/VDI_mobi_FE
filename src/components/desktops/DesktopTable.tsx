@@ -450,7 +450,7 @@ const DesktopTable = () => {
                       <h6 className="text-wrap">{item.gpu}</h6>
                     </Table.Cell>
                     <Table.Cell>
-                      <h6 className="text-wrap">{item.ssd}</h6>
+                      <h6 className="text-wrap">{item.volumeType}</h6>
                     </Table.Cell>
                     <Table.Cell>
                       <h6 className="text-wrap">{item.ram}</h6>

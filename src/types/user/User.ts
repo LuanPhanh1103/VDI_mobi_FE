@@ -29,8 +29,10 @@ export interface Desktop {
   hasGPU: string | null;
   port: string | null;
   gpu: string | null;
-  ssd: string | null;
   ram: string | null;
+  volumeSize: string | null;
+  volumeType: string | null;
   cpu: string | null;
   userId: string | null;
+  projectId: string | null;
 }

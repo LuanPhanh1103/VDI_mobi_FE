@@ -434,7 +434,7 @@ const UserDetails = (user: ProfilePropType) => {
         </div>
       </div>
       {canUpdateUser && isChangePassword && (
-        <div className="relative rounded-xl dark:shadow-dark-md shadow-md bg-white mt-6 dark:bg-darkgray p-6 relative w-full break-words">
+        <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white mt-6 dark:bg-darkgray p-6 relative w-full break-words">
           <h5 className="card-title">Change User Password</h5>
           <Icon
             className="close-change-password-icon"

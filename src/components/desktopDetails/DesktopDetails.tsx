@@ -36,7 +36,7 @@ const DesktopDetails = ({ desktop, ipList, desNameList }: DesktopDetailsType) =>
   const [port, setPort] = useState(currenDesktop.port);
   const [hasGpu, setHasGpu] = useState(currenDesktop.hasGPU === 'YES' ? true : false);
   const [gpu, setGpu] = useState(currenDesktop.gpu);
-  const [ssd, setSsd] = useState(currenDesktop.ssd);
+  const [volumeSize, setVolumeSize] = useState(currenDesktop.volumeSize);
   const [ram, setRam] = useState(currenDesktop.ram);
   const [cpu, setCpu] = useState(currenDesktop.cpu);
 
@@ -243,7 +243,7 @@ const DesktopDetails = ({ desktop, ipList, desNameList }: DesktopDetailsType) =>
       cpu: cpu,
       gpu: hasGpu ? gpu : '0',
       ram: ram,
-      ssd: ssd,
+      volumeSize: volumeSize,
       userId: user,
     };
 
@@ -286,7 +286,7 @@ const DesktopDetails = ({ desktop, ipList, desNameList }: DesktopDetailsType) =>
     setGpu(currenDesktop.gpu);
     setCpu(currenDesktop.cpu);
     setRam(currenDesktop.ram);
-    setSsd(currenDesktop.ssd);
+    setVolumeSize(currenDesktop.volumeSize);
     setUser(userList.find((u) => u.value === currenDesktop.userId)?.value || '');
 
     setIsEdit(false);
@@ -472,11 +472,11 @@ const DesktopDetails = ({ desktop, ipList, desNameList }: DesktopDetailsType) =>
                 />
                 <InputText
                   type="text"
-                  label="SSD"
-                  value={ssd || ''}
-                  onChange={setSsd}
+                  label="volumeSize"
+                  value={volumeSize || ''}
+                  onChange={setVolumeSize}
                   isEditable={isEdit}
-                  placeholder="Enter SSD"
+                  placeholder="Enter volumeSize"
                   required={isEdit}
                   errorMessages={{
                     required: 'This field is required',
@@ -541,7 +541,7 @@ const DesktopDetails = ({ desktop, ipList, desNameList }: DesktopDetailsType) =>
         hasPermission('get_all_user') &&
         hasPermission('get_all_VDI') &&
         isChangePassword && (
-          <div className="relative rounded-xl dark:shadow-dark-md shadow-md bg-white mt-6 dark:bg-darkgray p-6 relative w-full break-words">
+          <div className="rounded-xl dark:shadow-dark-md shadow-md bg-white mt-6 dark:bg-darkgray p-6 relative w-full break-words">
             <h5 className="card-title">Change Desktop Password</h5>
             <Icon
               className="close-change-password-icon"

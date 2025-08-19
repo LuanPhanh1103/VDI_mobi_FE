@@ -85,7 +85,7 @@ const MyDesktopTable = () => {
 
       try {
         setLoading(true);
-        const res = await axiosClient.get(`/virtualDesktops/user/${userDetails.id}`, {
+        const res = await axiosClient.get(`/virtualDesktops/resolve`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setDesktops(res.data.result || []);
@@ -351,7 +351,10 @@ const MyDesktopTable = () => {
           <h6 className="text-wrap">{desktop.gpu}</h6>
         </Table.Cell>
         <Table.Cell>
-          <h6 className="text-wrap">{desktop.ssd}</h6>
+          <h6 className="text-wrap">{desktop.volumeType}</h6>
+        </Table.Cell>
+        <Table.Cell>
+          <h6 className="text-wrap">{desktop.volumeSize}</h6>
         </Table.Cell>
         <Table.Cell>
           <h6 className="text-wrap">{desktop.ram}</h6>
@@ -461,7 +464,8 @@ const MyDesktopTable = () => {
             <Table.HeadCell>Password</Table.HeadCell>
             <Table.HeadCell>hasGPU</Table.HeadCell>
             <Table.HeadCell>GPU</Table.HeadCell>
-            <Table.HeadCell>SSD</Table.HeadCell>
+            <Table.HeadCell>VolumeType</Table.HeadCell>
+            <Table.HeadCell>VolumeSize</Table.HeadCell>
             <Table.HeadCell>RAM</Table.HeadCell>
             <Table.HeadCell>CPU</Table.HeadCell>
             <Table.HeadCell>Status</Table.HeadCell>
